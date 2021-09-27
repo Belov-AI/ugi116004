@@ -4,6 +4,8 @@ namespace Arithmetics
 {
     class Program
     {
+        static int m = 5;
+
         static void Main()
         {
             int n = 2;
@@ -60,11 +62,39 @@ namespace Arithmetics
             }
 
             Console.WriteLine(Square(5));
+            Console.WriteLine(Square(1.5));
+
+            Console.WriteLine("Введите целое число");
+            var val = int.Parse(Console.ReadLine());
+            Console.WriteLine(++val);
+
+            var v = 0x91;
+            var w = v.ToString();
+            Console.WriteLine(w);
+
+            w = Convert.ToString(v, 2);
+            Console.WriteLine(w);
+
+            int m = 2;
+
+            Console.WriteLine(Program.m);
             
+
+
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// Этот метод возводит в квадрат целое число
+        /// </summary>
+        /// <param name="number">число, возводимое в квадрат</param>
+        /// <returns>квадрат числа</returns>
         static int Square(int number)
+        {
+            return number * number;
+        }
+
+        static double Square(double number)
         {
             return number * number;
         }

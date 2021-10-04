@@ -24,9 +24,6 @@ namespace Arithmetics
             double sinusX = Math.Sin(angle);
             Console.WriteLine(sinusX);
 
-            //int k;
-            //k = 1;
-
             var k = "1";
             Console.WriteLine(k);
 
@@ -50,13 +47,13 @@ namespace Arithmetics
 
             checked
             {
-                longNumber = 100;
+                longNumber = 100; //число 100
                 integerNumber = (int)longNumber;
                 Console.WriteLine(integerNumber);
-
+               
                 //longNumber = 3000000000L;
                 //integerNumber = (int)longNumber;
-                //Console.WriteLine(integerNumber);
+                //Console.WriteLine(integerNumber);               
             }
 
             Console.WriteLine(Square(5));
@@ -64,6 +61,11 @@ namespace Arithmetics
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// Вычисление квадрата целого числа
+        /// </summary>
+        /// <param name="number">исходное число</param>
+        /// <returns>квадрат числа</returns>
         static int Square(int number)
         {
             return number * number;

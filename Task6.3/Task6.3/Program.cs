@@ -58,8 +58,8 @@ namespace Task6._3
         {
             int qx, qy, px, py;
 
-            GetCoordinates(queenPosition, out qy, out qx);
-            GetCoordinates(pawnPosition, out py, out px);
+            (qy, qx) = GetCoordinates(queenPosition);
+            (py, px) = GetCoordinates(pawnPosition);
 
             return py - qy == 1 && Math.Abs(px - qx) == 1;
         }
@@ -72,7 +72,7 @@ namespace Task6._3
         static bool IsPawnPositionCorrect(string pawnPosition)
         {
             int px, py;
-            GetCoordinates(pawnPosition, out py, out px);
+            (py, px) = GetCoordinates(pawnPosition);
 
             return py > 0 && py < 7;
         }
@@ -80,16 +80,18 @@ namespace Task6._3
         static bool IsQueenCanMove(string queenPosition, string move)
         {
             int qx, qy, mx, my;
-            GetCoordinates(queenPosition, out qy, out qx);
-            GetCoordinates(move, out my, out mx);
+            (qy, qx) = GetCoordinates(queenPosition);
+            (my, mx) = GetCoordinates(move);
 
-            return qy == my || qx == mx || Math.Abs(qy - my) == Math.Abs(qx - mx); 
+            return qy == my || qx == mx || Math.Abs(qy - my) == Math.Abs(qx - mx);
         }
 
-        static void GetCoordinates(string position, out int row, out int column)
+        static (int, int) GetCoordinates(string position)
         {
-            row = (int)position[1] - 0x31;
-            column = (int)position[0] - 0x61;
+            var row = (int)position[1] - 0x31;
+            var column = (int)position[0] - 0x61;
+
+            return (row, column);
         }
     }
 }

@@ -19,17 +19,41 @@ namespace ClasssesAndObjects
             peter.Name = "Пётр";
             peter.Surname = "Иванов";
             peter.Age = 17;
-            PrintPerson(peter);
+            //PrintPerson(peter);
+            peter.PrintInfo();
 
             var ann = new Person() { Name = "Анна", Surname = "Сергеева", Age = 18 };
-            PrintPerson(ann);
+            //PrintPerson(ann);
+            ann.PrintInfo();
+
+            Person.PrintSpecies();
+
+            var persons = new[] { peter, ann };
+
+            foreach (var person in persons)
+                Console.WriteLine(person.FullName);
+
+            var jacob = new Person() { Name = "Яков", Surname = "Сидоров"};
+            try
+            {
+                jacob.Age = -20;
+            }
+            catch(ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            jacob.INN = 123456;
+
+            //PrintPerson(jacob);
+            jacob.PrintInfo();
 
             Console.ReadKey();
         }
 
-        static void PrintPerson(Person person)
-        {
-            Console.WriteLine($"{Person.Species}: {person.Name} {person.Surname}, возраст: {person.Age}");
-        }
+        //static void PrintPerson(Person person)
+        //{
+        //    Console.WriteLine($"{Person.Species}: {person.Name} {person.Surname}, возраст: {person.Age}");
+        //}
     }
 }

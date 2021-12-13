@@ -8,6 +8,7 @@ namespace Arrays2DTasks
 {
     class Program
     {
+        static Random rnd = new Random();
         static void Main(string[] args)
         {
             var numbers = new[,] { { 3, -11, 8 }, { 0, 5, 17 } };
@@ -17,6 +18,24 @@ namespace Arrays2DTasks
             Console.WriteLine($"{answer}\n");
 
             PrintTable(Transpose(numbers));
+
+            var rowNumber = rnd.Next(2, 11);
+            var columnNumber = rnd.Next(2, 11);
+
+            var matrix = new double[rowNumber, columnNumber];
+            
+            FillRandomA(matrix);
+            PrintMatrix(matrix);
+
+            FillRandomB(matrix);
+            PrintMatrix(matrix);
+
+            //var rand = new Random();
+
+            //for (var i = 0; i < 20; i++)
+            //{
+            //    Console.Write($"{rand.Next(1000)} ");
+            //}
 
             Console.ReadKey();
         }
@@ -54,5 +73,55 @@ namespace Arrays2DTasks
             return result;
         }
 
+        static void PrintMatrix(double[,] matrix)
+        {
+            for(var i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (var j = 0; j < matrix.GetLength(1); j++)
+                    Console.Write($"{matrix[i, j]:F5} ");
+
+                Console.WriteLine();
+            }
+
+            Console.WriteLine();
+        }
+
+        static void FillRandomA(double[,] matrix)
+        {
+            double sum = 0;
+
+            for(var i = 0; i < matrix.GetLength(0); i++)
+                for(var j = 0; j < matrix.GetLength(1); j++)
+                {
+                    do
+                    {
+                        matrix[i, j] = rnd.NextDouble();
+                    } while (matrix[i, j] == 0);
+
+                    sum += matrix[i, j];
+                }
+
+            for (var i = 0; i < matrix.GetLength(0); i++)
+                for (var j = 0; j < matrix.GetLength(1); j++)
+                    matrix[i, j] /= sum;
+        }
+
+        static void FillRandomB(double[,] matrix)
+        {
+            for(var i = 0; i < matrix.GetLength(0); i++)
+            {
+                double sum = 0;
+
+                for(var j = 0; j < matrix.GetLength(1); j++)
+                {
+                   while ((matrix[i, j] = rnd.NextDouble()) == 0) { }
+
+                   sum += matrix[i, j];
+                }
+
+                for (var j = 0; j < matrix.GetLength(1); j++)
+                    matrix[i, j] /= sum;
+            }
+        }
     }
 }

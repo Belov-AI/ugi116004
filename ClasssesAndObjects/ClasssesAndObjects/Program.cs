@@ -14,15 +14,18 @@ namespace ClasssesAndObjects
         {
             Console.WriteLine(number);
             Console.WriteLine(Person.Species);
+            Console.WriteLine(Person.LogFileName);
 
-            var peter = new Person();
+            PrintSomePersonInfo("Николай", "Романов", 25, 12345);
+
+            var peter = new Person(101);
             peter.Name = "Пётр";
             peter.Surname = "Иванов";
             peter.Age = 17;
             //PrintPerson(peter);
             peter.PrintInfo();
 
-            var ann = new Person() { Name = "Анна", Surname = "Сергеева", Age = 18 };
+            var ann = new Person(102) { Name = "Анна", Surname = "Сергеева", Age = 18 };
             //PrintPerson(ann);
             ann.PrintInfo();
 
@@ -33,7 +36,8 @@ namespace ClasssesAndObjects
             foreach (var person in persons)
                 Console.WriteLine(person.FullName);
 
-            var jacob = new Person() { Name = "Яков", Surname = "Сидоров"};
+            var jacob = new Person("Яков", "Сидоров", 103);
+
             try
             {
                 jacob.Age = -20;
@@ -43,17 +47,23 @@ namespace ClasssesAndObjects
                 Console.WriteLine(e.Message);
             }
 
-            jacob.INN = 123456;
+            jacob.Age = 30;
+            
 
             //PrintPerson(jacob);
+
             jacob.PrintInfo();
+
+            var george = new Person { Name = "George", Age = 5 };
+            george.PrintInfo();
 
             Console.ReadKey();
         }
 
-        //static void PrintPerson(Person person)
-        //{
-        //    Console.WriteLine($"{Person.Species}: {person.Name} {person.Surname}, возраст: {person.Age}");
-        //}
+        static void PrintSomePersonInfo(string name, string surname, int age, int inn)
+        {
+            var person = new Person(name, surname, age, inn);
+            person.PrintInfo();
+        }
     }
 }

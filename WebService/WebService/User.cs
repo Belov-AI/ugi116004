@@ -17,7 +17,7 @@ namespace WebService
 
         public User() : this("Anonymous") { }
 
-        public void PrintInfo()
+        public virtual void PrintInfo()
         {
             Console.WriteLine($"Пользователь {Login}");
         }

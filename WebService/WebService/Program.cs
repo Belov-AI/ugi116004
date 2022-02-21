@@ -19,9 +19,15 @@ namespace WebService
 
             var paul = new VipUser("Paul123", "456789", "paul@gmail.com", 2400569743981555);
 
-            var admin = new Admin("Sergei", "admin2022", "sergei@mail.ru", 2);
+            var admin = new Admin("Sergei", "admin2022", "sergei@mail.ru", 4);
 
             var users = new[] { george, kate, john, paul, admin};
+
+            object obj = new object();
+
+            RegisteredUser regUser = paul as RegisteredUser;
+
+            VipUser vip = kate as VipUser;
 
             foreach (var user in users)
                 user.PrintInfo();

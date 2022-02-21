@@ -15,5 +15,13 @@ namespace WebService
         {
             accessLevel = level;
         }
+
+        public override void PrintInfo()
+        {
+            Console.Write($"Администратор {Login}.\n");
+
+            if (accessLevel < 3)
+                Console.WriteLine($"Email: {Email}");
+        }
     }
 }

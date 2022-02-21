@@ -16,5 +16,11 @@ namespace WebService
             Email = email;
             this.password = password;
         }
+
+        public override void PrintInfo()
+        {
+            //base.PrintInfo();
+            Console.WriteLine($"Пользователь {Login}. E-mail {Email}");
+        }
     }
 }

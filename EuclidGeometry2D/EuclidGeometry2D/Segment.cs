@@ -27,5 +27,13 @@ namespace EuclidGeometry2D
             B = b;
         }
 
+        public bool IsContainsPoint(Point p)
+        {
+            //(𝑥𝑥0−𝑥𝑥1)(𝑦𝑦2−𝑦𝑦0)−(𝑦𝑦0−𝑦𝑦1)(𝑥𝑥2−𝑥𝑥0)=0
+            //(𝑥𝑥0−𝑥𝑥1)(𝑥𝑥2−𝑥𝑥0)+(𝑦𝑦0−𝑦𝑦1)(𝑦𝑦2−𝑦𝑦0)≥0
+
+            return Math.Abs((p.X - A.X) * (B.Y - p.Y) - (p.Y - A.Y) * (B.X - p.X)) < Geometry.Epsilon &&
+                (p.X - A.X) * (B.X - p.X) + (p.Y - A.Y) * (B.Y - p.Y) > -Geometry.Epsilon;
+        }
     }
 }

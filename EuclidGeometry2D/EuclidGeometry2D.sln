@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuclidGeometry2D", "EuclidG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometryConsoleApp", "GeometryConsoleApp\GeometryConsoleApp.csproj", "{152A6459-FDED-49FC-B793-F84ABBE46C19}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuclidGeometry2D.UnitTests", "EuclidGeometry2D.UnitTests\EuclidGeometry2D.UnitTests.csproj", "{CBA35C55-C632-44C3-9A44-F75DF86478EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{152A6459-FDED-49FC-B793-F84ABBE46C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{152A6459-FDED-49FC-B793-F84ABBE46C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{152A6459-FDED-49FC-B793-F84ABBE46C19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBA35C55-C632-44C3-9A44-F75DF86478EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBA35C55-C632-44C3-9A44-F75DF86478EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBA35C55-C632-44C3-9A44-F75DF86478EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBA35C55-C632-44C3-9A44-F75DF86478EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

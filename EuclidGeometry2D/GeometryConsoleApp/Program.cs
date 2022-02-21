@@ -20,6 +20,9 @@ namespace GeometryConsoleApp
             segment.A.X = -1;
             PrintSegment(segment);
 
+            var s = Geometry.CreateSegment(new Point(-1, 3), new Point(2, 5));
+            s = Geometry.CreateSegment(new Point(1, 1), new Point(1, 1));
+
             Console.ReadKey();
         }
 

@@ -16,5 +16,24 @@ namespace EuclidGeometry2D
             X = x;
             Y = y;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Point point)
+                return Math.Abs(X - point.X) < Geometry.Epsilon &&
+                    Math.Abs(Y - point.Y) < Geometry.Epsilon;
+
+            throw new ArgumentException();
+        }
+
+        public static bool operator ==(Point a, Point b)
+        {
+            return a.Equals(b);
+        }
+
+        public static bool operator != (Point a, Point b)
+        {
+            return !a.Equals(b);
+        }
     }
 }

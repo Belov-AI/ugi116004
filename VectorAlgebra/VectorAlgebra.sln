@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VectorAlgebra", "VectorAlgebra\VectorAlgebra.csproj", "{CD2C4092-BF7D-4160-B7D4-7FE8E9BECBBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vectors", "Vectors\Vectors.csproj", "{C3C29B2B-DDED-4EBC-A540-333A617FD2BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD2C4092-BF7D-4160-B7D4-7FE8E9BECBBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD2C4092-BF7D-4160-B7D4-7FE8E9BECBBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD2C4092-BF7D-4160-B7D4-7FE8E9BECBBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD2C4092-BF7D-4160-B7D4-7FE8E9BECBBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3C29B2B-DDED-4EBC-A540-333A617FD2BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3C29B2B-DDED-4EBC-A540-333A617FD2BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3C29B2B-DDED-4EBC-A540-333A617FD2BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3C29B2B-DDED-4EBC-A540-333A617FD2BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7060CD7C-FE02-4CA8-9209-833C435C5990}
+	EndGlobalSection
+EndGlobal

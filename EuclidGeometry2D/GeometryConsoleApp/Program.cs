@@ -11,6 +11,8 @@ namespace GeometryConsoleApp
     {
         static void Main()
         {
+            ConsoleColor
+
             var point = new Point(1, 2);
             PrintPoint(point);
 

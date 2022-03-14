@@ -11,7 +11,7 @@ namespace EuclidGeometry2D
         public static readonly double Epsilon = 1e-8;
         public static Segment CreateSegment(Point a, Point b)
         {
-            if (Math.Abs(a.X - b.X) < Epsilon && Math.Abs(a.Y - b.Y) < Epsilon)
+            if (a == b)
                 throw new ArgumentException("Вырожденный отрезок");
 
             return new Segment(a, b);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EuclidGeometry2D
 {
-    public class Segment
+    public class Segment : ICloneable
     {
         public Point A;
         public Point B;
@@ -34,6 +34,11 @@ namespace EuclidGeometry2D
 
             return Math.Abs((p.X - A.X) * (B.Y - p.Y) - (p.Y - A.Y) * (B.X - p.X)) < Geometry.Epsilon &&
                 (p.X - A.X) * (B.X - p.X) + (p.Y - A.Y) * (B.Y - p.Y) > -Geometry.Epsilon;
+        }
+
+        public object Clone()
+        {
+            return new Segment(A.Clone() as Point, B.Clone() as Point);
         }
     }
 }

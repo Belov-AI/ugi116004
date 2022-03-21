@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EuclidGeometry2D
 {
-    public class Point
+    public class Point : ICloneable
     {
         public double X;
         public double Y;
@@ -15,6 +15,11 @@ namespace EuclidGeometry2D
         {
             X = x;
             Y = y;
+        }
+
+        public object Clone()
+        {
+            return MemberwiseClone();
         }
 
         public override bool Equals(object obj)

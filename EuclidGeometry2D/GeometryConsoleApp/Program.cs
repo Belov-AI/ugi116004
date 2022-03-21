@@ -11,19 +11,31 @@ namespace GeometryConsoleApp
     {
         static void Main()
         {
-            ConsoleColor
 
             var point = new Point(1, 2);
             PrintPoint(point);
 
+            var point2 = point.Clone() as Point;
+            PrintPoint(point2);
+
+            Console.WriteLine();
+            point.X = 3;
+            PrintPoint(point);
+            PrintPoint(point2);
+
+            Console.WriteLine();
             var segment = new Segment(new Point(1, 1), new Point(3, 4));
             PrintSegment(segment);
+            var segment2 = segment.Clone() as Segment;
+            PrintSegment(segment2);
 
+            Console.WriteLine();
             segment.A.X = -1;
             PrintSegment(segment);
+            PrintSegment(segment2);
 
             var s = Geometry.CreateSegment(new Point(-1, 3), new Point(2, 5));
-            s = Geometry.CreateSegment(new Point(1, 1), new Point(1, 1));
+            //s = Geometry.CreateSegment(new Point(1, 1), new Point(1, 1));
 
             Console.ReadKey();
         }

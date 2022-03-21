@@ -16,5 +16,17 @@ namespace EuclidGeometry2D
 
             return new Segment(a, b);
         }
+
+        public static Triangle CreateTriangle(Point a, Point b, Point c)
+        {
+            var t = new Triangle(a, b, c);
+
+            if (t.AB.IsContainsPoint(t.C) ||
+                t.AC.IsContainsPoint(t.B) ||
+                t.BC.IsContainsPoint(t.A))
+                throw new ArgumentException("Вырожденный треугольник");
+
+            return t;
+        }
     }
 }

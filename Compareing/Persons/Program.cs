@@ -14,17 +14,27 @@ namespace Persons
             var ann = new Person() { Name = "Анна", Surname = "Сергеева", Age = 18 };
             var peter = new Person() { Name = "Пётр", Surname = "Алексеев", Age = 17 };
             var john = new Person() { Name = "Иван", Surname = "Алексеев", Age = 18 };
+            var paul = new Person() { Name = "Павел", Surname = "Сергеев", Age = 16 };
 
-            var persons = new[] { ann, peter, john };
+            var persons = new[] { ann, peter, john, paul };
 
             Array.Sort(persons);
+            PrintPersonArray(persons);
 
-            foreach (var person in persons)
-                Console.WriteLine(person);
+            Console.WriteLine();
+
+            Array.Sort(persons, new PersonComparerByAge());
+
+            PrintPersonArray(persons);
 
             Console.ReadKey();
         }
 
+        private static void PrintPersonArray(Person[] persons)
+        {
+            foreach (var person in persons)
+                Console.WriteLine(person);
+        }
 
     }
 }

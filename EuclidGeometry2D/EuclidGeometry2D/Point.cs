@@ -22,6 +22,19 @@ namespace EuclidGeometry2D
             return MemberwiseClone();
         }
 
+        public void Rotate(Point center, double angleInDegrees)
+        {
+            var angleInRadians = Math.PI * angleInDegrees / 180;
+
+            var xNew = (X - center.X) * Math.Cos(angleInRadians) -
+                (Y - center.Y) * Math.Sin(angleInRadians) + center.X;
+
+            var yNew = (X - center.X) * Math.Sin(angleInRadians) +
+                (Y - center.Y) * Math.Cos(angleInRadians) + center.Y;
+
+            (X, Y) = (xNew, yNew);
+        }
+
         public override bool Equals(object obj)
         {
             if (obj is Point point)

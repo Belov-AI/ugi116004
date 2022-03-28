@@ -55,12 +55,20 @@ namespace EuclidGeometry2D.UnitTests
             Assert.AreSame(t.C, t.AC.B);
         }
 
+        [Test]
+        public void Area_MyTriangle_1SquareUnit()
+        {
+            var triangle = GetMyTriangle();
 
+            var area = triangle.Area;
+
+            Assert.AreEqual(1, area, Geometry.Epsilon);
+        }
 
 
         private Triangle GetMyTriangle()
         {
-            return new Triangle(new Point(1, 1), new Point(3, 1), new Point(3, 3));
+            return new Triangle(new Point(1, 1), new Point(3, 1), new Point(3, 2));
         }
     }
 }

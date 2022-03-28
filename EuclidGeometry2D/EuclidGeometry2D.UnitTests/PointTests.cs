@@ -32,5 +32,16 @@ namespace EuclidGeometry2D.UnitTests
             Assert.AreNotSame(a, b);
         }
 
+        [Test]
+        public void RotateTest()
+        {
+            var point = new Point(2, 0);
+            var center = new Point(1, 1);
+
+            point.Rotate(center, 45);
+
+            Assert.AreEqual(1 + Math.Sqrt(2), point.X, Geometry.Epsilon);
+            Assert.AreEqual(1, point.Y, Geometry.Epsilon);
+        }
     }
 }

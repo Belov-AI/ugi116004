@@ -35,11 +35,31 @@ namespace EuclidGeometry2D
             }
         }
 
+        public double Area
+        {
+            get
+            {
+                var a = AB.Length;
+                var b = AC.Length;
+                var c = BC.Length;
+                var p = (a + b + c ) / 2;
+
+                return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+            }
+        }
+
         public Triangle(Point a, Point b, Point c)
         {
             A = a;
             B = b;
             C = c;
+        }
+
+        public void Rotate(Point center, double angleInDegrees)
+        {
+            A.Rotate(center, angleInDegrees);
+            B.Rotate(center, angleInDegrees);
+            C.Rotate(center, angleInDegrees);
         }
     }
 }

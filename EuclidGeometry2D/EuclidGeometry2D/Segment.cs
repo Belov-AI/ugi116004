@@ -40,5 +40,11 @@ namespace EuclidGeometry2D
         {
             return new Segment(A.Clone() as Point, B.Clone() as Point);
         }
+
+        public void Rotate(Point center, double angleInDegrees)
+        {
+            A.Rotate(center, angleInDegrees);
+            B.Rotate(center, angleInDegrees);
+        }
     }
 }

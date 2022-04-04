@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EuclidGeometry2D
 {
-    public class Triangle
+    public class Triangle : ICloneable
     {
         public Point A;
         public Point B;
@@ -55,11 +56,26 @@ namespace EuclidGeometry2D
             C = c;
         }
 
+        public IEnumerator<Point> GetEnumerator()
+        {
+            yield return A;
+            yield return B;
+            yield return C;
+        }
+
         public void Rotate(Point center, double angleInDegrees)
         {
-            A.Rotate(center, angleInDegrees);
-            B.Rotate(center, angleInDegrees);
-            C.Rotate(center, angleInDegrees);
+            foreach (var vertex in this)
+                vertex.Rotate(center, angleInDegrees);
+        }
+
+        public object Clone()
+        {
+            return new Triangle(
+                this.A.Clone() as Point, 
+                this.B.Clone() as Point, 
+                this.C.Clone() as Point
+                );
         }
     }
 }

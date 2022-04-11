@@ -12,10 +12,19 @@ namespace Forms
 {
     public partial class MainForm : Form
     {
+        private AuxiliaryForm form;
+
         public MainForm()
         {
             InitializeComponent();
             //Text = "Главное окно";
+            
+            form = new AuxiliaryForm();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {          
+            form.Show();
         }
     }
 }

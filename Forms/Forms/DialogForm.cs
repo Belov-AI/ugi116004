@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Forms
 {
-    public partial class AuxilaryForm : Form
+    public partial class DialogForm : Form
     {
-        public AuxilaryForm()
+        public DialogForm()
         {
             InitializeComponent();
         }

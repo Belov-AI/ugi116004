@@ -29,7 +29,13 @@ namespace WebService
 
             VipUser vip = kate as VipUser;
 
+            
+
+            var service = new Service();
             foreach (var user in users)
+                service.Login(user);
+
+            foreach (var user in service)
                 user.PrintInfo();
 
             Console.ReadKey();

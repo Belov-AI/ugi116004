@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F324D38F-5998-41D5-94E5-04B290BC5C62}</ProjectGuid>
+    <ProjectGuid>{A062C662-93B4-4F2F-A849-30157AA64077}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>WebService</RootNamespace>
-    <AssemblyName>WebService</AssemblyName>
+    <RootNamespace>Lists</RootNamespace>
+    <AssemblyName>Lists</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,13 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegisteredUser.cs" />
-    <Compile Include="Service.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="VipUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

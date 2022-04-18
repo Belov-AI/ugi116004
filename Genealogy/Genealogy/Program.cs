@@ -25,7 +25,7 @@ namespace Genealogy
                 Console.WriteLine("3 - дети");
                 Console.WriteLine("0 - выход");
 
-                int result = 0;
+                int result;
 
                 if (!int.TryParse(Console.ReadLine(), out result) ||
                     result > 3 || result < 0)
@@ -91,12 +91,93 @@ namespace Genealogy
 
         static void PrintCommonAncestor()
         {
-            throw new NotImplementedException();
+            var first = GetPerson("Введите имя первого человека");
+
+            if(first != "")
+            {
+                var second = GetPerson("Введите имя второго человека");
+
+                if(second != "")
+                {
+                    var firstAncestors = GetAncestors(first);
+                    var secondAncestors = GetAncestors(second);
+
+                    if (firstAncestors.Contains(second))
+                        Console.WriteLine($"{second} - предок, {first} - потомок\n");
+                    else if (secondAncestors.Contains(first))
+                        Console.WriteLine($"{first} - предок, {second} - потомок\n");
+                    else
+                        foreach(var person in firstAncestors)
+                            if (secondAncestors.Contains(person))
+                            {
+                                Console.WriteLine($"{person} - ближайший общий предок\n");
+                                break;
+                            }
+                }
+            }          
         }
 
         static void PrintChildren()
         {
-            throw new NotImplementedException();
+            var person = GetPerson("Введите имя");
+            
+            if(person != "")
+            {
+                var children = new List<string>();
+
+                foreach (var child in tree.Keys)
+                    if (tree[child] == person)
+                        children.Add(child);
+
+                if (children.Count == 0)
+                    Console.WriteLine("Детей нет\n");
+                else
+                {
+                    Console.WriteLine("Дети:");
+
+                    foreach (var child in children)
+                        Console.WriteLine(child);
+
+                    Console.WriteLine();
+                }                   
+            }
+        }
+
+        static List<string> GetAncestors(string person)
+        {
+            var result = new List<string>();
+
+            while (tree.ContainsKey(person))
+            {
+                person = tree[person];
+                result.Add(person);
+            }
+
+            return result;
+        }
+
+        static bool IsCorrectPerson(string name)
+        {
+            return tree.ContainsKey(name) || tree.ContainsValue(name);
+        }
+
+        static string GetPerson(string message)
+        {
+            string name;
+
+            while (true)
+            {
+                Console.WriteLine(message);
+                name = Console.ReadLine();
+
+                if (name != "" && !IsCorrectPerson(name))
+                {
+                    Console.WriteLine($"Персонажа {name} нет");
+                    continue;
+                }
+
+                return name;
+            }
         }
     }
 }

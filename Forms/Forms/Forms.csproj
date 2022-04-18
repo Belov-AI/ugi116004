@@ -52,11 +52,23 @@
     <Compile Include="AuxiliaryForm.Designer.cs">
       <DependentUpon>AuxiliaryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ContainerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContainerForm.Designer.cs">
+      <DependentUpon>ContainerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DialogForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DialogForm.Designer.cs">
       <DependentUpon>DialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentForm.Designer.cs">
+      <DependentUpon>DocumentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -74,6 +86,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AuxiliaryForm.resx">
       <DependentUpon>AuxiliaryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContainerForm.resx">
+      <DependentUpon>ContainerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DialogForm.resx">
       <DependentUpon>DialogForm.cs</DependentUpon>

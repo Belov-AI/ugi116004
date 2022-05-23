@@ -16,10 +16,16 @@ namespace Controls
         {
             InitializeComponent();
 
-            //var button = new Button();
-            //button.Location = new Point(100, 200);
-            //button.Text = "Click me";
-            //Controls.Add(button);
+            stringListBox.Items.Add("Москва");
+            stringListBox.Items.Add("Екатеринбург");
+            stringListBox.Items.Add("Санкт-Питербург");
+            stringListBox.Items.Add("Владивосток");
+
+            fontComboBox.Items.Add("Microsoft San Serif");
+            fontComboBox.Items.Add("Times New Roman");
+            fontComboBox.Items.Add("Courier New");
+            fontComboBox.Items.Add("Arial");
+            fontComboBox.SelectedIndex = 0;
         }
 
         private void inputTextBox_TextChanged(object sender, EventArgs e)
@@ -71,6 +77,21 @@ namespace Controls
             captionLabel.Font = new Font(
                 captionLabel.Font.FontFamily,
                 size,
+                captionLabel.Font.Style);
+        }
+
+        private void stringListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            captionLabel.Text = stringListBox.SelectedItem.ToString();
+        }
+
+        private void fontComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var fontFamilyName = fontComboBox.SelectedItem.ToString();
+
+            captionLabel.Font = new Font(
+                fontFamilyName,
+                captionLabel.Font.Size,
                 captionLabel.Font.Style);
         }
     }

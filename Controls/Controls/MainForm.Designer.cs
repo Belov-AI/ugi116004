@@ -41,6 +41,8 @@ namespace Controls
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.stringListBox = new System.Windows.Forms.ListBox();
+            this.fontComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // captionLabel
@@ -75,9 +77,9 @@ namespace Controls
             // inputButton
             // 
             this.inputButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.inputButton.Location = new System.Drawing.Point(21, 150);
+            this.inputButton.Location = new System.Drawing.Point(21, 158);
             this.inputButton.Name = "inputButton";
-            this.inputButton.Size = new System.Drawing.Size(104, 36);
+            this.inputButton.Size = new System.Drawing.Size(104, 28);
             this.inputButton.TabIndex = 3;
             this.inputButton.Text = "Ввод";
             this.inputButton.UseVisualStyleBackColor = true;
@@ -176,11 +178,36 @@ namespace Controls
             this.radioButton3.UseVisualStyleBackColor = true;
             this.radioButton3.CheckedChanged += new System.EventHandler(this.ChangeFontSize);
             // 
+            // stringListBox
+            // 
+            this.stringListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.stringListBox.FormattingEnabled = true;
+            this.stringListBox.ItemHeight = 20;
+            this.stringListBox.Location = new System.Drawing.Point(21, 331);
+            this.stringListBox.Name = "stringListBox";
+            this.stringListBox.Size = new System.Drawing.Size(476, 84);
+            this.stringListBox.Sorted = true;
+            this.stringListBox.TabIndex = 8;
+            this.stringListBox.SelectedIndexChanged += new System.EventHandler(this.stringListBox_SelectedIndexChanged);
+            // 
+            // fontComboBox
+            // 
+            this.fontComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.fontComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.fontComboBox.FormattingEnabled = true;
+            this.fontComboBox.Location = new System.Drawing.Point(260, 158);
+            this.fontComboBox.Name = "fontComboBox";
+            this.fontComboBox.Size = new System.Drawing.Size(237, 28);
+            this.fontComboBox.TabIndex = 9;
+            this.fontComboBox.SelectedIndexChanged += new System.EventHandler(this.fontComboBox_SelectedIndexChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(997, 488);
+            this.Controls.Add(this.fontComboBox);
+            this.Controls.Add(this.stringListBox);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
@@ -216,6 +243,8 @@ namespace Controls
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.ListBox stringListBox;
+        private System.Windows.Forms.ComboBox fontComboBox;
     }
 }
 

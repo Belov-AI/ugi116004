@@ -32,9 +32,23 @@ namespace WebService
             
 
             var service = new Service();
+
+            var consoleLogger = new ConsoleLogger();
+            service.Log += consoleLogger.Register;
+
+            var fileLogger = new FileLogger("log.txt");
+            service.Log += fileLogger.Register;
+
             foreach (var user in users)
                 service.Login(user);
 
+            Console.WriteLine();
+            foreach (var user in service)
+                user.PrintInfo();
+
+            service.Logout(john);
+
+            Console.WriteLine();
             foreach (var user in service)
                 user.PrintInfo();
 

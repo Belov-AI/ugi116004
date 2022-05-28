@@ -9,7 +9,20 @@ namespace WebService
 {
     public class Service : IEnumerable<User>
     {
-        private List<User> users = new List<User>();
+        private List<User> users;
+
+        public event Action<string> Log;
+
+        public Service()
+        {
+            users = new List<User>();
+        }
+
+        public void LogMe(string message)
+        {
+            if (Log != null)
+                Log(message);
+        }
 
         public IEnumerator<User> GetEnumerator()
         {
@@ -21,7 +34,16 @@ namespace WebService
             if(!users.Contains(user))
             {
                 users.Add(user);
-                Console.WriteLine($"> {user.Login} присоединился");
+                LogMe($"{user.Login} присоединился");
+            }
+        }
+
+        public void Logout(User user)
+        {
+            if (users.Contains(user))
+            {
+                users.Remove(user);
+                LogMe($"{user.Login} отсоединился");
             }
         }
 
